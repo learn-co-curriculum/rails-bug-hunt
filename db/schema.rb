@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140219222410) do
     t.string   "name"
     t.integer  "serial_number"
     t.integer  "cost_in_cents"
-    t.integer  "amount_in_stock"
+    t.integer  "amount_in_stock", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

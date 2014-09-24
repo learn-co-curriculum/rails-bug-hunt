@@ -17,26 +17,26 @@ class Order < ActiveRecord::Base
     end
 
     event :ship do
-      transitions from: :processing, to: :unsubmitted
+      transitions from: :processing, to: :shipped
     end
   end
 
   def total_cost_in_cents
-    (products.sum(:cost_in_cents) / 100.0).round(2)
+    products.sum(:cost_in_cents)
   end
 
   def manage_product_addition!(product)
-    product.decrement_amount_in_stock!
     raise InvalidProductAddition unless self.unsubmitted?
+    product.decrement_amount_in_stock!
   end
 
   def manage_product_removal!(product)
-    product.increment_amount_in_stock!
     raise InvalidProductRemoval unless self.unsubmitted?
+    product.increment_amount_in_stock!
   end
 
   def has_products?
-    self.products.count >= 0
+    self.products.count > 0
   end
 
   class InvalidProductAddition < StandardError
