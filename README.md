@@ -1,9 +1,3 @@
----
-  tags: debugging, testing, rspec, rails, model testing, intermediate, bonus
-  languages: ruby
-  resources: 1
----
-
 # Bug Hunt
 
 ## Instructions
