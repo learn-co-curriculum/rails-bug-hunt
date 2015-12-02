@@ -8,3 +8,5 @@ Complete the pending tests to reveal the latent errors and then turn your failin
 
 **Hint:** Each pending test is masking exactly 1 bug.
 
+
+<a href='https://learn.co/lessons/rails-bug-hunt' data-visibility='hidden'>View this lesson on Learn.co</a>
